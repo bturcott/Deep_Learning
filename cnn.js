@@ -4,11 +4,11 @@
 //Increased vision radius
 //two car lengths ahead, one car length behind, and one lane laterally
 //Set the number of neurons in the hidden layer to the mean of the input and output layers
-
+//broke 70 mph!
 // a few things don't have var in front of them - they update already existing variables the game needs
-lanesSide = 1;
-patchesAhead = 9;
-patchesBehind = 8;
+lanesSide = 2;
+patchesAhead = 11;
+patchesBehind = 6;
 trainIterations = 10000; 
 
 var num_inputs = (lanesSide * 2 + 1) * (patchesAhead + patchesBehind);
@@ -32,12 +32,6 @@ layer_defs.push({
 layer_defs.push({
     type: 'fc',
     num_neurons: (network_size + num_actions)/4,
-    activation: 'relu'
-})
-//added a 3rd fc layer
-layer_defs.push({
-    type: 'fc',
-    num_neurons: (network_size + num_actions)/8,
     activation: 'relu'
 })
 
