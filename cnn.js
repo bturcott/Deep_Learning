@@ -9,7 +9,7 @@
 lanesSide = 1;
 patchesAhead = 9;
 patchesBehind = 8;
-trainIterations = 10000;
+trainIterations = 10000; 
 
 var num_inputs = (lanesSide * 2 + 1) * (patchesAhead + patchesBehind);
 var num_actions = 5;
@@ -32,6 +32,12 @@ layer_defs.push({
 layer_defs.push({
     type: 'fc',
     num_neurons: (network_size + num_actions)/4,
+    activation: 'relu'
+})
+//added a 3rd fc layer
+layer_defs.push({
+    type: 'fc',
+    num_neurons: (network_size + num_actions)/8,
     activation: 'relu'
 })
 
